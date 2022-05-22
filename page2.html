@@ -1,0 +1,35 @@
+<!-- Zone CSS -->
+<style>
+  
+  
+  body {
+    padding:12px; 
+    padding-right:100px; 
+  }
+  body, input {
+    color: #FF0000; 
+    font-size: 24px;
+    font-family: Arial;
+    background-color: #333;
+  }
+</style>
+
+
+<!-- Zone HTML -->
+<font color="white"> 
+<h1>Attention</h1>
+Regarde l'URL avant de rentrer tes identifiants et mots de passe n'importe où  ! </font> 
+<p></p>
+ 
+<font color="green">  Identifiant : </font> <output  id="login"></output >
+<p></p>
+<font color="green"> Mot de passe :  </font> <output  id="password"></output >
+
+    <script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      document.getElementById('login').innerHTML = urlParams.get('login');
+      document.getElementById('password').innerHTML = urlParams.get('password');
+      // empty string
+    </script>
